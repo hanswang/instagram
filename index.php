@@ -5,10 +5,10 @@ if (isset($_GET['code']) && strlen($_GET['code']) >= 30) {
     $url = 'https://api.instagram.com/oauth/access_token';
 
     $params = array(
-        'client_id' => '5f73931df20f44518cb4c2f7a4c02a29',
-        'client_secret'   => 'e4404f9688c44222ac0c0b1ac6488de2',
+        'client_id' => 'd83b7590410e48a49922d0ad9204ce07',
+        'client_secret'   => 'f9431795d8804fe0b162a5bafb807952',
         'grant_type'  => 'authorization_code',
-        'redirect_uri' => 'https://www.crowdconvergence.com',
+        'redirect_uri' => 'http://debug.hanswang.info/instagram/',
         'code' => $_GET['code']
     );
 
@@ -31,14 +31,14 @@ if (isset($_GET['code']) && strlen($_GET['code']) >= 30) {
     $resp = json_decode($result[2], true);
 
     if (isset($resp['code']) && $resp['code'] == 400) {
-        HEADER("location: http://www.crowdconvergence.com/landing.php");
+        HEADER("location: landing.php");
         exit();
     }
 
     $token = $resp['access_token'];
 
 } else {
-    HEADER("location: http://www.crowdconvergence.com/landing.php");
+    HEADER("location: landing.php");
     exit();
 }
 
@@ -69,7 +69,7 @@ if (isset($_GET['code']) && strlen($_GET['code']) >= 30) {
         <div class="hero-unit">
             <p>This is a demo search, type the search query in the search box below, and HIT "Query" to start!</p>
             <p>
-                <form class="form-search" action="/search.php" method="post">
+                <form class="form-search" action="./search.php" method="post">
                     <div class="input-append">
                         <input type="text" name="q" class="span6 search-query" style="height:44px;">
                         <input type="hidden" name="token" value="<?php echo $token;?>">

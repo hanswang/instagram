@@ -78,7 +78,7 @@
         };
 
         $.ajax({
-            url: '/ajaxLoad.php',
+            url: './ajaxLoad.php',
             type: 'POST',
             dataType: 'json',
             data: param,
