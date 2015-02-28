@@ -1,0 +1,18 @@
+Auth token:
+ - client ID:
+5f73931df20f44518cb4c2f7a4c02a29
+ - client secret:
+ e4404f9688c44222ac0c0b1ac6488de2
+
+
+
+types of search:
+
+User search endpoint
+https://api.instagram.com/v1/users/search?q=jack&access_token=ACCESS-TOKEN
+
+Tag search
+ - step 1:
+https://api.instagram.com/v1/tags/search?q=snowy&access_token=ACCESS-TOKEN
+ - step 2:
+https://api.instagram.com/v1/tags/{tag-name}/media/recent?access_token=ACCESS-TOKEN
